@@ -13,7 +13,7 @@ const NewsCard = ({
   description,
   href,
 }: NewsCard): React.ReactElement => (
-  <div className="bg-white shadow-md rounded-lg w-full mt-2 sm:mt-0 sm:w-72 max-w-md">
+  <div className="bg-white shadow-md rounded-lg mt-2 xl:mt-0 max-w-md w-full sm:w-72 mx-auto">
     <div className="px-4 py-2 mt-2">
       <h3 className="font-bold text-md text-yellow-300 tracking-normal">
         My Journey to the Mountains.

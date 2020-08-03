@@ -1,4 +1,4 @@
-import { Navbar, Slider, News } from "../components";
+import { Navbar, Slider, News, Socials } from "../components";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Navbar />
       {/* <Slider /> */}
       <News />
+      <Socials />
     </div>
   );
 }
