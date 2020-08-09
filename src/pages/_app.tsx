@@ -1,5 +1,6 @@
 import "../styles/index.css";
 import Head from "next/head";
+import { Navbar } from "../components";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,6 +10,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
+      <Navbar />
+
       <Component {...pageProps} />
     </>
   );
