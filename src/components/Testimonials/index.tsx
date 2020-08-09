@@ -6,7 +6,9 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard = ({ classes }: TestimonialCardProps) => (
-  <div className={`rounded-lg shadow-md w-3/5 overflow-hidden ${classes}`}>
+  <div
+    className={`rounded-lg shadow-md w-4/5 max-w-xs sm:w-2/5 md:w-2/6 overflow-hidden ${classes}`}
+  >
     <div
       className="h-36 bg-cover"
       style={{
@@ -27,9 +29,9 @@ const TestimonialCard = ({ classes }: TestimonialCardProps) => (
 
 const Testimonials: React.FC = () => {
   return (
-    <div className="relative">
-      <div className="flex justify-center bg-primary text-white pt-5">
-        <div className="flex flex-col justify-center items-center h-64 w-11/12">
+    <div>
+      <div className="flex justify-center bg-primary text-white pb-5">
+        <div className="flex flex-col justify-center items-center h-96 w-11/12">
           <h3 className="text-lg mb-6 font-bold uppercase">
             Como você pode ajudar?
           </h3>
@@ -38,20 +40,20 @@ const Testimonials: React.FC = () => {
             numquam!
           </span>
 
-          <div className="flex justify-between w-4/5">
-            <button className="px-3 py-2 rounded-md bg-white text-black">
+          <div className="flex flex-col sm:flex-row sm:justify-around w-4/5 md:max-w-xl">
+            <button className="px-3 py-2 rounded-md bg-white text-black sm:w-44">
               Seja um voluntário
             </button>
-            <button className="px-3 py-2 rounded-md bg-white text-black">
+            <button className="px-3 py-2 rounded-md bg-white text-black sm:w-44 mt-2 sm:mt-0">
               Seja um doador
             </button>
           </div>
         </div>
       </div>
-      <div className="h-full">
-        <div className="flex justify-around flex-col items-center">
-          <TestimonialCard classes="mb-6" />
-          <TestimonialCard classes="mb-6" />
+      <div className="h-full relative" style={{ top: "-50px" }}>
+        <div className="container mx-auto flex justify-around flex-col items-center lg:flex-row lg:justify-around">
+          <TestimonialCard classes="mb-6 lg:mb-0" />
+          <TestimonialCard classes="mb-6 lg:mb-0" />
           <TestimonialCard />
         </div>
       </div>
