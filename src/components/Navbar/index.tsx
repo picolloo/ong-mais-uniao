@@ -27,7 +27,7 @@ const Navbar = (): React.ReactElement => {
 
   return (
     <header
-      className={`text-gray-800 p-2 sm:flex sm:items-center sm:justify-between md:container sm:mx-auto absolute inset-x-0 z-10 ${
+      className={`text-gray-800 p-2 md:flex md:items-center md:justify-between lg:container sm:mx-auto absolute inset-x-0 z-10 ${
         openMenu ? "bg-white" : "bg-transparent"
       }`}
     >
@@ -37,7 +37,7 @@ const Navbar = (): React.ReactElement => {
             <Link href="/">Ong Mais União</Link>
           </h2>
         </div>
-        <div className="sm:hidden">
+        <div className="md:hidden">
           <button
             type="button"
             onClick={() => openMenuSet(!openMenu)}
@@ -47,7 +47,7 @@ const Navbar = (): React.ReactElement => {
           </button>
         </div>
       </div>
-      <div className={`${openMenu ? "block" : "hidden"} sm:flex items-center`}>
+      <div className={`${openMenu ? "block" : "hidden"} md:flex items-center`}>
         <NavLink href="donations" value="Doações" classes="mr-2" />
         <NavLink href="store" value="Moeda" classes="mr-2" />
         <NavLink href="projects" value="Projetos" classes="mr-2" />
