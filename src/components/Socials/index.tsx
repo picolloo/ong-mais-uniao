@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import {} from "react-icons/md";
 
 const Socials: React.FC = () => {
   return (
@@ -10,26 +9,32 @@ const Socials: React.FC = () => {
         <div className="flex ">
           <div className="w-full h-20 sm:w-1/3  flex justify-center items-center ">
             <Link href="#">
-              <FaInstagram
-                size={40}
-                className="cursor-pointer text-white hover:opacity-75"
-              />
+              <a>
+                <FaInstagram
+                  size={40}
+                  className="cursor-pointer text-white hover:opacity-75"
+                />
+              </a>
             </Link>
           </div>
           <div className="w-full h-20 sm:w-1/3 flex justify-center items-center ">
             <Link href="#">
-              <FaFacebook
-                size={40}
-                className="cursor-pointer text-white hover:opacity-75"
-              />
+              <a>
+                <FaFacebook
+                  size={40}
+                  className="cursor-pointer text-white hover:opacity-75"
+                />
+              </a>
             </Link>
           </div>
           <div className="w-full h-20 sm:w-1/3  flex justify-center items-center">
             <Link href="#">
-              <FaLinkedin
-                size={40}
-                className="cursor-pointer text-white hover:opacity-75"
-              />
+              <a>
+                <FaLinkedin
+                  size={40}
+                  className="cursor-pointer text-white hover:opacity-75"
+                />
+              </a>
             </Link>
           </div>
         </div>
