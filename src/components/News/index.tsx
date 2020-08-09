@@ -37,9 +37,9 @@ const NewsCard = ({
 
 const News: React.FC = () => {
   return (
-    <div className="md:container mx-auto p-4 my-16">
+    <div className="md:container mx-auto p-4 my-14">
       <h2 className="text-yellow-300 font-semibold text-2xl">Notícias</h2>
-      <div className="flex flex-col sm:flex-wrap sm:flex-row justify-between items-center mt-4">
+      <div className="flex flex-col flex-wrap justify-between sm:flex-row items-center mt-4">
         <NewsCard />
         <NewsCard />
         <NewsCard />
