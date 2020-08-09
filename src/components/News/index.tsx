@@ -1,6 +1,7 @@
 import React from "react";
+import faker from "faker";
 
-interface NewsCard {
+interface NewsCardProps {
   title?: string;
   date?: string;
   description?: string;
@@ -12,7 +13,7 @@ const NewsCard = ({
   date,
   description,
   href,
-}: NewsCard): React.ReactElement => (
+}: NewsCardProps): React.ReactElement => (
   <div className="bg-white shadow-md rounded-lg mt-2 xl:mt-0 max-w-md w-full sm:w-72 mx-auto">
     <div className="px-4 py-2 mt-2">
       <h3 className="font-bold text-md text-yellow-300 tracking-normal">
@@ -36,7 +37,7 @@ const NewsCard = ({
 
 const News: React.FC = () => {
   return (
-    <div className="md:container mx-auto p-4">
+    <div className="md:container mx-auto p-4 my-16">
       <h2 className="text-yellow-300 font-semibold text-2xl">Notícias</h2>
       <div className="flex flex-col sm:flex-wrap sm:flex-row justify-between items-center mt-4">
         <NewsCard />
@@ -49,3 +50,16 @@ const News: React.FC = () => {
 };
 
 export default News;
+
+export const getStaticProps = () => {
+  const news = [...Array(5).keys()].map((_) => ({
+    title: faker.name.title(),
+    date: faker.date.past().toString(),
+    description: faker.lorem.sentences(2),
+    href: faker.internet.url(),
+  }));
+
+  return {
+    props: { news },
+  };
+};
