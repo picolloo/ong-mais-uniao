@@ -7,7 +7,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ classes }: TestimonialCardProps) => (
   <div
-    className={`rounded-lg shadow-md w-4/5 max-w-xs sm:w-2/5 md:w-2/6 overflow-hidden ${classes}`}
+    className={`rounded-lg w-4/5 bg-white max-w-xs sm:w-2/5 md:w-2/6 overflow-hidden ${classes}`}
   >
     <div
       className="h-36 bg-cover"
@@ -29,7 +29,7 @@ const TestimonialCard = ({ classes }: TestimonialCardProps) => (
 
 const Testimonials: React.FC = () => {
   return (
-    <div>
+    <div className="bg-gray-100 pb-5">
       <div className="flex justify-center bg-primary text-white pb-5">
         <div className="flex flex-col justify-center items-center h-96 w-11/12">
           <h3 className="text-lg mb-6 font-bold uppercase">

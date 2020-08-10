@@ -1,6 +1,6 @@
 import "../styles/index.css";
 import Head from "next/head";
-import { Navbar } from "../components";
+import { Navbar, Footer } from "../components";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,6 +13,8 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
 
       <Component {...pageProps} />
+
+      <Footer />
     </>
   );
 }
