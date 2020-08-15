@@ -14,23 +14,27 @@ const NewsCard = ({
   description,
   href,
 }: NewsCardProps): React.ReactElement => (
-  <div className="bg-white shadow-md rounded-lg mt-2 xl:mt-0 max-w-md w-full sm:w-72 mx-auto">
-    <div className="px-4 py-2 mt-2">
-      <h3 className="font-bold text-md text-yellow-300 tracking-normal">
-        My Journey to the Mountains.
-      </h3>
-      <small className="text-gray-400">20/04/2020 - Florianópolis</small>
+  <div className="bg-white overflow-hidden hover:bg-yellow-100 border border-gray-200 p-3 cursor-pointer">
+    <div className="m-2 text-sm">
+      <span className="text-right text-xs">Jan 17, 2020</span>
+      <h2 className="font-bold text-lg h-2 mb-8">
+        My Journey to the Mountains
+      </h2>
 
-      <p className="text-sm text-gray-700 mt-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        reiciendis ad architecto at aut placeat quia, minus dolor.
+      <p className="text-xs">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
       </p>
-
-      <div className="flex justify-end mt-2">
-        <button className="font-semibold text-yellow-300 hover:opacity-75 focus:outline-none ">
-          Saiba mais
-        </button>
-      </div>
+    </div>
+    <div className="w-full text-right mt-4">
+      <a className="text-yellow-400 uppercase font-bold text-sm" href="#">
+        Saiba mais
+      </a>
     </div>
   </div>
 );
@@ -39,7 +43,9 @@ const News: React.FC = () => {
   return (
     <div className="md:container mx-auto p-4 my-14">
       <h2 className="text-yellow-300 font-semibold text-2xl">Notícias</h2>
-      <div className="flex flex-col flex-wrap justify-between sm:flex-row items-center mt-4">
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 m-5 mb-10">
+        <NewsCard />
+        <NewsCard />
         <NewsCard />
         <NewsCard />
         <NewsCard />
