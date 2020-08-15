@@ -1,0 +1,27 @@
+{
+  "name": "@ong-main-uniao/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@tailwindcss/ui": "^0.4.0",
+    "autoprefixer": "^9.8.5",
+    "next": "9.5.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-icons": "^3.10.0",
+    "tailwindcss": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/faker": "^4.1.12",
+    "@types/node": "^14.0.27",
+    "@types/react": "^16.9.43",
+    "faker": "^4.1.0",
+    "typescript": "^3.9.7"
+  }
+}
