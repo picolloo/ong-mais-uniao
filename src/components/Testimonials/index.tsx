@@ -1,14 +1,8 @@
 import React from "react";
 import faker from "faker";
 
-interface TestimonialCardProps {
-  classes?: string;
-}
-
-const TestimonialCard = ({ classes }: TestimonialCardProps) => (
-  <div
-    className={`rounded-lg w-4/5 bg-white max-w-xs sm:w-2/5 md:w-2/6 overflow-hidden ${classes}`}
-  >
+const TestimonialCard = () => (
+  <div className="rounded-md shadow-md text-center overflow-hidden">
     <div
       className="h-36 bg-cover"
       style={{
@@ -30,7 +24,7 @@ const TestimonialCard = ({ classes }: TestimonialCardProps) => (
 const Testimonials: React.FC = () => {
   return (
     <div className="bg-gray-100 pb-5">
-      <div className="flex justify-center bg-primary text-white pb-5">
+      <div className="flex justify-center bg-primary text-white py-5 ">
         <div className="flex flex-col justify-center items-center h-96 w-11/12">
           <h3 className="text-lg mb-6 font-bold uppercase">
             Como você pode ajudar?
@@ -50,10 +44,19 @@ const Testimonials: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="h-full relative" style={{ top: "-50px" }}>
-        <div className="container mx-auto flex justify-around flex-col items-center lg:flex-row lg:justify-around">
+      <div
+        className="container h-full relative mx-auto px-1/12 sm:px-0"
+        style={{ top: "-50px" }}
+      >
+        {/* <div className="container mx-auto flex justify-around flex-col items-center lg:flex-row lg:justify-around">
           <TestimonialCard classes="mb-6 lg:mb-0" />
           <TestimonialCard classes="mb-6 lg:mb-0" />
+          <TestimonialCard />
+        </div>
+         */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-40">
+          <TestimonialCard />
+          <TestimonialCard />
           <TestimonialCard />
         </div>
       </div>
