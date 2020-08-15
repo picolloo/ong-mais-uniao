@@ -17,7 +17,7 @@ const NewsCard = ({
   <div className="bg-white overflow-hidden hover:bg-yellow-100 border border-gray-200 p-3 cursor-pointer">
     <div className="m-2 text-sm">
       <span className="text-right text-xs">Jan 17, 2020</span>
-      <h2 className="font-bold text-lg h-2 mb-8">
+      <h2 className="font-bold text-lg h-5 sm:h-2 mb-8">
         My Journey to the Mountains
       </h2>
 
