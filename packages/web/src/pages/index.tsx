@@ -1,21 +1,26 @@
-import {
-  Hero,
-  Slider,
-  News,
-  Socials,
-  Testimonials,
-  About,
-} from "../components";
+import React from "react";
+import { GetStaticProps } from "next";
 
-export default function Home() {
+import { HomeProps } from "../types/components";
+import { Hero, News, Socials, Testimonials, About } from "../components";
+import { getNews } from "../lib/api";
+
+export default function Home({ news }: HomeProps) {
   return (
     <div>
-      {/* <Slider /> */}
       <Hero />
       <About />
-      <News />
+      <News news={news} />
       <Socials />
       <Testimonials />
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const news = await getNews();
+
+  return {
+    props: { news },
+  };
+};

@@ -1,5 +1,4 @@
 import React from "react";
-import faker from "faker";
 
 const TestimonialCard = () => (
   <div className="rounded-md shadow-md text-center overflow-hidden">
@@ -66,15 +65,15 @@ const Testimonials: React.FC = () => {
 
 export default Testimonials;
 
-export const getStaticProps = () => {
-  const testimonials = [...Array(3).keys()].map((_) => ({
-    id: faker.name.title(),
-    name: faker.name.findName(),
-    role: faker.company.companyName(),
-    quote: faker.lorem.sentences(2),
-  }));
+// export const getStaticProps = () => {
+//   const testimonials = [...Array(3).keys()].map((_) => ({
+//     id: faker.name.title(),
+//     name: faker.name.findName(),
+//     role: faker.company.companyName(),
+//     quote: faker.lorem.sentences(2),
+//   }));
 
-  return {
-    props: { testimonials },
-  };
-};
+//   return {
+//     props: { testimonials },
+//   };
+// };
