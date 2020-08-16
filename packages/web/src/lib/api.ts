@@ -52,7 +52,7 @@ export const getNew = async ({
 }: Pick<New, "slug">): Promise<New | undefined> => {
   const { data } = await api.get<New>(`/news?slug=${slug}`);
 
-  return data;
+  return data[0];
 };
 
 export const getTestimonials = async (): Promise<TestimonialItem[]> => {

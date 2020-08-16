@@ -12,6 +12,8 @@ export interface NewsProps {
   news: NewsItem[];
 }
 
+export interface NewsDetails extends NewsItem {}
+
 export interface TestimonialProps {
   testimonials: TestimonialItem[];
 }

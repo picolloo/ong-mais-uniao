@@ -1,13 +1,15 @@
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
+
 import { getNews, getNew } from "../../lib/api";
 import { Navbar } from "../../components";
+import { NewsDetails } from "../../types/components";
 
-const NewDetail: React.FC = () => {
+const NewDetail: React.FC<NewsDetails> = ({ title }) => {
   return (
     <div>
       <Navbar />
-      NEWS DETAILS
+      {title}
     </div>
   );
 };
@@ -32,7 +34,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   return {
     props: {
-      slug: "",
+      title: newItem.title,
     },
   };
 };
