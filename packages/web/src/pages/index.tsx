@@ -3,24 +3,25 @@ import { GetStaticProps } from "next";
 
 import { HomeProps } from "../types/components";
 import { Hero, News, Socials, Testimonials, About } from "../components";
-import { getNews } from "../lib/api";
+import { getNews, getTestimonials } from "../lib/api";
 
-export default function Home({ news }: HomeProps) {
+export default function Home({ news, testimonials }: HomeProps) {
   return (
     <div>
       <Hero />
       <About />
       <News news={news} />
       <Socials />
-      <Testimonials />
+      <Testimonials testimonials={testimonials} />
     </div>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const news = await getNews();
+  const testimonials = await getTestimonials();
 
   return {
-    props: { news },
+    props: { news, testimonials },
   };
 };

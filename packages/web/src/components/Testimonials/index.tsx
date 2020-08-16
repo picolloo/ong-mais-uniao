@@ -1,26 +1,28 @@
 import React from "react";
+import { TestimonialProps, TestimonialItem } from "../../types/components";
 
-const TestimonialCard = () => (
+const TestimonialCard = ({
+  name,
+  role,
+  statement,
+  imageUrl,
+}: TestimonialItem) => (
   <div className="rounded-md shadow-md text-center overflow-hidden">
     <div
-      className="h-36 bg-cover"
+      className="h-36 bg-cover bg-center"
       style={{
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1024&q=80)",
+        backgroundImage: `url(http://localhost:1337${imageUrl})`,
       }}
     />
     <div className="p-3 flex flex-col justify-center">
-      <span className="text-xl text-primary font-semibold">Jon Doe</span>
-      <small className="text-gray-400 mb-2">Voluntário</small>
-      <span className="text-gray-600 italic text-xs">
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-        incidunt quis fugiat accusamus. Dignissimos, beatae."
-      </span>
+      <span className="text-xl text-primary font-semibold">{name}</span>
+      <small className="text-gray-400 mb-2">{role}</small>
+      <span className="text-gray-600 italic text-xs">"{statement}"</span>
     </div>
   </div>
 );
 
-const Testimonials: React.FC = () => {
+const Testimonials: React.FC<TestimonialProps> = ({ testimonials }) => {
   return (
     <div className="bg-gray-100 pb-5">
       <div className="flex justify-center bg-primary text-white py-5 ">
@@ -44,19 +46,20 @@ const Testimonials: React.FC = () => {
         </div>
       </div>
       <div
-        className="container h-full relative mx-auto px-1/12 sm:px-0"
+        className="container h-full relative mx-auto px-1/12 md:px-0"
         style={{ top: "-50px" }}
       >
-        {/* <div className="container mx-auto flex justify-around flex-col items-center lg:flex-row lg:justify-around">
-          <TestimonialCard classes="mb-6 lg:mb-0" />
-          <TestimonialCard classes="mb-6 lg:mb-0" />
-          <TestimonialCard />
-        </div>
-         */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-40">
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 lg:gap-40">
+          {testimonials.map(({ id, name, role, statement, imageUrl }) => (
+            <TestimonialCard
+              key={id}
+              id={id}
+              name={name}
+              role={role}
+              statement={statement}
+              imageUrl={imageUrl}
+            />
+          ))}
         </div>
       </div>
     </div>
@@ -64,16 +67,3 @@ const Testimonials: React.FC = () => {
 };
 
 export default Testimonials;
-
-// export const getStaticProps = () => {
-//   const testimonials = [...Array(3).keys()].map((_) => ({
-//     id: faker.name.title(),
-//     name: faker.name.findName(),
-//     role: faker.company.companyName(),
-//     quote: faker.lorem.sentences(2),
-//   }));
-
-//   return {
-//     props: { testimonials },
-//   };
-// };

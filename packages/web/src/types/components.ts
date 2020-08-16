@@ -12,4 +12,16 @@ export interface NewsProps {
   news: NewsItem[];
 }
 
-export interface HomeProps extends NewsProps {}
+export interface TestimonialProps {
+  testimonials: TestimonialItem[];
+}
+
+export interface TestimonialItem {
+  id: number;
+  name: string;
+  role: string;
+  statement: string;
+  imageUrl: string;
+}
+
+export interface HomeProps extends NewsProps, TestimonialProps {}

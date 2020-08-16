@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import { New } from "../types/api";
-import { NewsItem } from "../types/components";
+import { New, Testimonial } from "../types/api";
+import { NewsItem, TestimonialItem } from "../types/components";
 
 const api = axios.create({ baseURL: "http://localhost:1337" });
 
@@ -38,4 +38,20 @@ export const getNews = async (): Promise<NewsItem[]> => {
   });
 
   return news;
+};
+
+export const getTestimonials = async (): Promise<TestimonialItem[]> => {
+  const { data } = await api.get<Testimonial[]>("/testimonials");
+
+  const testimonials = data.map((testimonialItem) => {
+    return {
+      id: testimonialItem.id,
+      name: testimonialItem.name,
+      role: testimonialItem.role,
+      statement: testimonialItem.statement,
+      imageUrl: testimonialItem.image.url,
+    };
+  });
+
+  return testimonials;
 };
