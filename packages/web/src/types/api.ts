@@ -21,6 +21,11 @@ export interface New extends StrapiEntity {
   slug: string;
 }
 
+export interface GetNewsProps {
+  ordered?: boolean;
+  limit?: number;
+}
+
 export interface Testimonial extends StrapiEntity {
   name: string;
   role: string;

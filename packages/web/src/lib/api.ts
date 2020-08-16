@@ -1,11 +1,14 @@
 import axios from "axios";
 
-import { New, Testimonial } from "../types/api";
+import { New, Testimonial, GetNewsProps } from "../types/api";
 import { NewsItem, TestimonialItem } from "../types/components";
 
 const api = axios.create({ baseURL: "http://localhost:1337" });
 
-export const getNews = async (): Promise<NewsItem[]> => {
+export const getNews = async ({
+  ordered = true,
+  limit = 6,
+}: GetNewsProps = {}): Promise<NewsItem[]> => {
   const months = [
     "Janeiro",
     "Fevereiro",
@@ -21,7 +24,11 @@ export const getNews = async (): Promise<NewsItem[]> => {
     "Dezembro",
   ];
 
-  const { data } = await api.get<New[]>("/news");
+  const queryString = `?${ordered && "_sort=created_at:desc"}${
+    limit && `&_limit=${limit}`
+  }`;
+
+  const { data } = await api.get<New[]>(`/news${queryString}`);
 
   const news = data.map((newItem) => {
     const date = new Date(newItem.created_at);
