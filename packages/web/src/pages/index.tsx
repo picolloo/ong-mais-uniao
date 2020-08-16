@@ -2,12 +2,20 @@ import React from "react";
 import { GetStaticProps } from "next";
 
 import { HomeProps } from "../types/components";
-import { Hero, News, Socials, Testimonials, About } from "../components";
+import {
+  Hero,
+  News,
+  Socials,
+  Testimonials,
+  About,
+  Navbar,
+} from "../components";
 import { getNews, getTestimonials } from "../lib/api";
 
 export default function Home({ news, testimonials }: HomeProps) {
   return (
     <div>
+      <Navbar absolute />
       <Hero />
       <About />
       <News news={news} />

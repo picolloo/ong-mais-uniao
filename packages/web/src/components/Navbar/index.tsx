@@ -8,6 +8,10 @@ interface NavLinkProps {
   classes?: string;
 }
 
+interface NavProps {
+  absolute?: boolean;
+}
+
 const NavLink = ({
   href,
   value,
@@ -22,14 +26,14 @@ const NavLink = ({
   </Link>
 );
 
-const Navbar = (): React.ReactElement => {
+const Navbar = ({ absolute }: NavProps): React.ReactElement => {
   const [openMenu, openMenuSet] = useState(false);
 
   return (
     <header
-      className={`text-gray-800 p-2 md:flex md:items-center md:justify-between lg:container sm:mx-auto absolute inset-x-0 z-10 ${
+      className={`text-gray-800 p-2 md:flex md:items-center md:justify-between lg:container sm:mx-auto inset-x-0 z-10 ${
         openMenu ? "bg-white" : "bg-transparent"
-      }`}
+      } ${absolute && "absolute"}`}
     >
       <div className="flex justify-between items-center p-2 ">
         <div>
