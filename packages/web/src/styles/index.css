@@ -15,6 +15,13 @@ button {
   cursor: pointer;
 }
 
+html,
+body,
+body > div:first-child,
+div#__next {
+  height: 100%;
+}
+
 .custom-shape-divider-bottom-1597456282 {
   position: absolute;
   bottom: 0;

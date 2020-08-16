@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <div className="bg-primary w-full text-white p-4">
+    <footer className="bg-primary text-white p-4">
       <div className="flex justify-between container mx-auto">
         <div className="flex justify-between w-72">
           <div className="flex flex-col">
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

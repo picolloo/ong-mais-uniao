@@ -17,11 +17,7 @@ const Divider = (): ReactElement => (
 );
 
 const About: React.FC = () => {
-  return (
-    <div>
-      <Divider />
-    </div>
-  );
+  return <div>{/* <Divider /> */}</div>;
 };
 
 export default About;
