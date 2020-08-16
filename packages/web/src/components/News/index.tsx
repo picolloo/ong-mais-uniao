@@ -1,6 +1,7 @@
 import React from "react";
 
 import { NewsItem, NewsProps } from "../../types/components";
+import Link from "next/link";
 
 const NewsCard = ({
   id,
@@ -16,17 +17,16 @@ const NewsCard = ({
       <span className="text-right text-xs">
         {month} {day}, {year}
       </span>
-      <h2 className="font-bold text-lg h-5 sm:h-2 mb-8">{title}</h2>
+      <h2 className="font-bold text-lg mb-8">{title}</h2>
 
       <p className="text-xs">{description}</p>
     </div>
     <div className="w-full text-right mt-4">
-      <a
-        className="text-yellow-400 uppercase font-bold text-sm"
-        href={`/news/${slug}`}
-      >
-        Saiba mais
-      </a>
+      <Link href="/news/[slug]" as={`/news/${slug}`}>
+        <a className="text-yellow-400 uppercase font-bold text-sm">
+          Saiba mais
+        </a>
+      </Link>
     </div>
   </div>
 );

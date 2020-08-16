@@ -47,6 +47,14 @@ export const getNews = async ({
   return news;
 };
 
+export const getNew = async ({
+  slug,
+}: Pick<New, "slug">): Promise<New | undefined> => {
+  const { data } = await api.get<New>(`/news?slug=${slug}`);
+
+  return data;
+};
+
 export const getTestimonials = async (): Promise<TestimonialItem[]> => {
   const { data } = await api.get<Testimonial[]>("/testimonials");
 
