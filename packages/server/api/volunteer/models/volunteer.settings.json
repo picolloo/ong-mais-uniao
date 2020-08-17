@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "volunteers",
+  "info": {
+    "name": "Volunteer"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "biginteger"
+    }
+  }
+}
