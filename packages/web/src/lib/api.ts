@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { New, Testimonial, GetNewsProps } from "../types/api";
+import { New, Testimonial, GetNewsProps, Volunteer } from "../types/api";
 import { NewsItem, TestimonialItem } from "../types/components";
 
 const api = axios.create({ baseURL: "http://localhost:1337" });
@@ -69,4 +69,18 @@ export const getTestimonials = async (): Promise<TestimonialItem[]> => {
   });
 
   return testimonials;
+};
+
+export const createVolunteer = async ({
+  name,
+  email,
+  phone,
+}: Pick<Volunteer, "name" | "email" | "phone">): Promise<Volunteer> => {
+  const { data } = await api.post<Volunteer>(`/volunteers`, {
+    name,
+    email,
+    phone,
+  });
+
+  return data;
 };

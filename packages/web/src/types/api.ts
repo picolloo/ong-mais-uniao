@@ -59,3 +59,9 @@ interface ImageFormat {
   width: number;
   height: number;
 }
+
+export interface Volunteer extends StrapiEntity {
+  name: string;
+  email: string;
+  phone?: number;
+}
