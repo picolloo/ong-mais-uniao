@@ -9,15 +9,9 @@ interface NavLinkProps {
   classes?: string;
 }
 
-const NavLink = ({
-  href,
-  value,
-  classes,
-}: NavLinkProps): React.ReactElement => (
+const NavLink = ({ href, value }: NavLinkProps): React.ReactElement => (
   <Link href="#">
-    <span
-      className={`${classes} mt-2 sm:mt-0 font-semibold hover:bg-primary hover:text-white px-2 py-1 rounded cursor-pointer block`}
-    >
+    <span className="mt-2 sm:mt-0 font-semibold hover:bg-primary hover:text-white px-2 py-1 rounded cursor-pointer block">
       {value}
     </span>
   </Link>
@@ -68,7 +62,7 @@ const Navbar = (): React.ReactElement => {
         <div className="flex justify-between items-center p-2 ">
           <div>
             <h2 className="hover:text-cool-gray-600 focus:text-cool-gray-600 text-xl font-bold">
-              <Link href="/">Ong Mais Uniãos</Link>
+              <Link href="/">Ong Mais União</Link>
             </h2>
           </div>
           <div className="md:hidden">
@@ -82,14 +76,16 @@ const Navbar = (): React.ReactElement => {
           </div>
         </div>
         <div
-          className={`${openMenu ? "block" : "hidden"} md:flex items-center`}
+          className={`${
+            openMenu ? "block" : "hidden"
+          } md:flex items-center gap-2`}
         >
-          <NavLink href="about" value="Sobre nós" classes="mr-2" />
-          <NavLink href="projects" value="Projetos" classes="mr-2" />
-          <NavLink href="donations" value="Contribua" classes="mr-2" />
-          <NavLink href="news" value="Notícias" classes="mr-2" />
-          <NavLink href="store" value="Moeda Social" classes="mr-2" />
-          <NavLink href="store" value="Transparência" classes="mr-2" />
+          <NavLink href="about" value="Sobre nós" />
+          <NavLink href="projects" value="Projetos" />
+          <NavLink href="donations" value="Contribua" />
+          <NavLink href="news" value="Notícias" />
+          <NavLink href="store" value="Moeda Social" />
+          <NavLink href="store" value="Transparência" />
           <NavLink href="contact" value="Fale com a gente" />
         </div>
       </div>

@@ -3,7 +3,10 @@ import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary text-white p-4">
+    <footer
+      className=" text-white p-4"
+      style={{ background: "rgba(51,51,51,1)" }}
+    >
       <div className="flex justify-between container mx-auto">
         <div className="flex justify-between w-72">
           <div className="flex flex-col">
