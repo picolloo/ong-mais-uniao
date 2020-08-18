@@ -11,7 +11,7 @@ interface NavLinkProps {
 
 const NavLink = ({ href, value }: NavLinkProps): React.ReactElement => (
   <Link href="#">
-    <span className="mt-2 sm:mt-0 font-semibold hover:bg-primary hover:text-white px-2 py-1 rounded cursor-pointer block">
+    <span className="mt-2 sm:mt-0 hover:bg-primary hover:text-white px-2 py-1 rounded cursor-pointer block">
       {value}
     </span>
   </Link>
@@ -22,11 +22,11 @@ const Navbar = (): React.ReactElement => {
 
   return (
     <header
-      className={`text-gray-800 py-3 px-2 sm:mx-auto lg:container ${
+      className={`text-gray-800 py-5 px-2 sm:mx-auto lg:container ${
         openMenu ? "bg-white" : "bg-transparent"
       }`}
     >
-      <div className="flex justify-end">
+      <div className="flex justify-end mb-2">
         <div className="flex gap-2">
           <Link href="#">
             <a>

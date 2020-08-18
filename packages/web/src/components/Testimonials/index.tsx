@@ -7,7 +7,7 @@ const TestimonialCard = ({
   statement,
   imageUrl,
 }: TestimonialItem) => (
-  <div className="rounded-md shadow-md text-center overflow-hidden">
+  <div className="rounded-md shadow-md shadow-primary text-center overflow-hidden bg-white">
     <div
       className="h-36 bg-cover bg-center"
       style={{
@@ -24,7 +24,7 @@ const TestimonialCard = ({
 
 const Testimonials: React.FC<TestimonialProps> = ({ testimonials }) => {
   return (
-    <div className="bg-gray-100 pb-5">
+    <div className="pb-5">
       <div className="flex justify-center bg-primary text-white py-5 ">
         <div className="flex flex-col justify-center items-center h-96 w-11/12">
           <h3 className="text-lg mb-6 font-bold uppercase">

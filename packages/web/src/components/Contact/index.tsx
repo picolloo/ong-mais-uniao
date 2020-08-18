@@ -1,28 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Volunteer } from "../../types/api";
 import { createVolunteer } from "../../lib/api";
 
 const Contact: React.FC = () => {
+  const [loading, loadingSet] = useState(false);
   const { register, handleSubmit, errors } = useForm<
     Pick<Volunteer, "name" | "email" | "phone">
   >();
 
   const onSubmit = async ({ name, email, phone }) => {
+    loadingSet((loading) => !loading);
     await createVolunteer({
       name,
       email,
       phone,
     });
+    loadingSet((loading) => !loading);
   };
 
-  console.log(errors);
-
   return (
-    <div className="w-full max-w-sm mx-auto">
+    <div className="py-20">
+      <div className="w-full flex justify-center">
+        <h3 className="text-4xl font-semibold text-primary mx-auto mb-5">
+          Quer fazer parte deste projeto?
+        </h3>
+      </div>
+
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-white shadow-md shadow-primary w-full max-w-md mx-auto rounded px-8 pt-6 pb-8 mb-4"
       >
         <div className="mb-4">
           <label
@@ -81,6 +88,7 @@ const Contact: React.FC = () => {
           <button
             className="bg-primary hover:opacity-75 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
+            disabled={loading}
           >
             Enviar
           </button>

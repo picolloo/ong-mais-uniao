@@ -9,6 +9,7 @@ import {
   Testimonials,
   About,
   Navbar,
+  Contact,
 } from "../components";
 import { getNews, getTestimonials } from "../lib/api";
 
@@ -19,6 +20,7 @@ export default function Home({ news, testimonials }: HomeProps) {
       <About />
       <News news={news} />
       <Testimonials testimonials={testimonials} />
+      <Contact />
     </main>
   );
 }
