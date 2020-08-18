@@ -6,12 +6,7 @@ import { Navbar } from "../../components";
 import { NewsDetails } from "../../types/components";
 
 const NewDetail: React.FC<NewsDetails> = ({ title }) => {
-  return (
-    <div>
-      <Navbar />
-      {title}
-    </div>
-  );
+  return <div>{title}</div>;
 };
 
 export default NewDetail;

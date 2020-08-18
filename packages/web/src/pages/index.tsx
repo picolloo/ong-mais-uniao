@@ -14,14 +14,12 @@ import { getNews, getTestimonials } from "../lib/api";
 
 export default function Home({ news, testimonials }: HomeProps) {
   return (
-    <div>
-      <Navbar absolute />
+    <main>
       <Hero />
       <About />
       <News news={news} />
-      <Socials />
       <Testimonials testimonials={testimonials} />
-    </div>
+    </main>
   );
 }
 
