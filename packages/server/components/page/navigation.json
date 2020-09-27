@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_page_navigations",
+  "info": {
+    "name": "Navigation",
+    "icon": "equals"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.button",
+      "required": true
+    }
+  }
+}

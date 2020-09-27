@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_gallery_images",
+  "info": {
+    "name": "Gallery",
+    "icon": "smile-beam"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}

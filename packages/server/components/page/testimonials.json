@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_page_testimonials",
+  "info": {
+    "name": "Testimonials",
+    "icon": "hands-helping"
+  },
+  "options": {},
+  "attributes": {
+    "TestimonialItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.testimonial-item",
+      "min": 3,
+      "max": 3
+    }
+  }
+}

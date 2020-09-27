@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_page_landing_ctas",
+  "info": {
+    "name": "LandingCTA",
+    "icon": "kiss-beam"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "DonatorBTN": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    },
+    "VolunteerBTN": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button",
+      "required": true
+    }
+  }
+}

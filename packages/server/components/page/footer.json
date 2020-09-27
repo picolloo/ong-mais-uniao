@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_footers",
+  "info": {
+    "name": "Footer",
+    "icon": "angle-double-down"
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.button"
+    }
+  }
+}

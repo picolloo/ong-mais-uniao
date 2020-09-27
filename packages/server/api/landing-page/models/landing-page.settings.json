@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_pages",
+  "info": {
+    "name": "LandingPage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "sliderPhotos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.about",
+      "required": true
+    },
+    "gallery": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.gallery-image",
+      "min": 6
+    },
+    "Socials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.socials"
+    },
+    "LandingCTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.landing-cta",
+      "required": true
+    },
+    "Testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.testimonials"
+    }
+  }
+}

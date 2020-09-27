@@ -1,22 +1,21 @@
 {
-  "kind": "collectionType",
-  "collectionName": "testimonials",
+  "collectionName": "components_page_testimonial_items",
   "info": {
-    "name": "Testimonial"
+    "name": "TestimonialItem",
+    "icon": "fist-raised"
   },
-  "options": {
-    "increments": true,
-    "timestamps": true
-  },
+  "options": {},
   "attributes": {
     "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images"
+        "files",
+        "images",
+        "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": true
     },
     "name": {
       "type": "string",
@@ -26,7 +25,7 @@
       "type": "string",
       "required": true
     },
-    "statement": {
+    "quote": {
       "type": "text",
       "required": true
     }

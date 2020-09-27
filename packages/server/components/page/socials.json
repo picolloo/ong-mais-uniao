@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_socials",
+  "info": {
+    "name": "Socials",
+    "icon": "users"
+  },
+  "options": {},
+  "attributes": {
+    "SocialItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.social-item",
+      "min": 3,
+      "max": 3,
+      "required": true
+    }
+  }
+}
